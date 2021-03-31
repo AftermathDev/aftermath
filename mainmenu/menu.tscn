@@ -1,21 +1,55 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://mainmenu/title.png" type="Texture" id=1]
+[ext_resource path="res://mainmenu/startbutton.vs" type="Script" id=2]
 
-[node name="Control" type="Control"]
+[node name="mainmenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextureRect" type="TextureRect" parent="."]
-anchor_left = 0.182
-anchor_top = 0.04
-anchor_right = 0.799
-anchor_bottom = 0.29
-margin_left = 0.100342
-margin_top = -0.0614948
-margin_right = 0.292358
-margin_bottom = -0.0615082
+anchor_left = 0.199
+anchor_top = 0.042
+anchor_right = 0.816
+anchor_bottom = 0.292
+margin_left = -0.356201
+margin_top = -0.202034
+margin_right = -0.164185
+margin_bottom = -0.202042
 texture = ExtResource( 1 )
 __meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="startbutton" type="Button" parent="."]
+anchor_left = 0.319
+anchor_top = 0.8
+anchor_right = 0.662
+anchor_bottom = 0.961
+margin_left = -0.509888
+margin_top = -0.280396
+margin_right = 0.258057
+margin_bottom = 0.119568
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="start" type="Label" parent="startbutton"]
+anchor_top = -0.01
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = -0.0299999
+margin_bottom = 3.0
+text = "start"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
