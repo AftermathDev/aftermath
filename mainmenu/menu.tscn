@@ -15,11 +15,10 @@ anchor_left = 0.199
 anchor_top = 0.042
 anchor_right = 0.816
 anchor_bottom = 0.292
-margin_left = -0.356201
-margin_top = -0.202034
 margin_right = -0.164185
-margin_bottom = -0.202042
 texture = ExtResource( 1 )
+expand = true
+stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
