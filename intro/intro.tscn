@@ -1,10 +1,12 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://intro/intro.gd" type="Script" id=1]
 [ext_resource path="res://intro/background.png" type="Texture" id=2]
 [ext_resource path="res://intro/intro_loop.ogg" type="AudioStream" id=3]
 [ext_resource path="res://intro/intro.ogg" type="AudioStream" id=4]
 [ext_resource path="res://intro/introintro.ogg" type="AudioStream" id=5]
+[ext_resource path="res://intro/saucer.png" type="Texture" id=6]
+[ext_resource path="res://intro/earth.png" type="Texture" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "slide to the left"
@@ -73,25 +75,41 @@ script = ExtResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 512.018, 298.294 )
 scale = Vector2( 2.41537, 1.91111 )
-offset = Vector2( 1100, 0 )
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
 playback_speed = 0.05
 "anims/slide to the left" = SubResource( 1 )
 
 [node name="background" type="AnimatedSprite" parent="."]
-position = Vector2( -1.50592, -137.343 )
-scale = Vector2( 4.26459, 2.86802 )
+position = Vector2( -1.50592, -179.721 )
+scale = Vector2( 4.31341, 3.26295 )
 frames = SubResource( 8 )
 animation = "stars"
 frame = 1
 centered = false
 
-[node name="loopmusic" type="AudioStreamPlayer" parent="."]
+[node name="sprites" type="Node2D" parent="."]
+
+[node name="saucer" type="Sprite" parent="sprites"]
+position = Vector2( 1342.48, 203.593 )
+scale = Vector2( 0.606485, 0.632831 )
+texture = ExtResource( 6 )
+
+[node name="earth" type="Sprite" parent="sprites"]
+position = Vector2( 1907.59, 548.13 )
+scale = Vector2( 1.20268, 1.20268 )
+texture = ExtResource( 7 )
+
+[node name="music" type="Node2D" parent="."]
+
+[node name="loopmusic" type="AudioStreamPlayer" parent="music"]
 stream = ExtResource( 3 )
 
-[node name="intromusic" type="AudioStreamPlayer" parent="."]
+[node name="intromusic" type="AudioStreamPlayer" parent="music"]
 stream = ExtResource( 4 )
 
-[node name="introintromusic" type="AudioStreamPlayer" parent="."]
+[node name="introintromusic" type="AudioStreamPlayer" parent="music"]
 stream = ExtResource( 5 )

@@ -4,13 +4,16 @@
 extends Node2D
 
 # get all important nodes
-onready var camera = get_node("Camera2D")
-onready var loopmusic = get_node("loopmusic")
-onready var music = get_node("intromusic")
-onready var background = get_node("background")
-onready var introintro = get_node("introintromusic")
+onready var camera = $Camera2D
+onready var background = $background
+#onready var loopmusic = $music/loopmusic
+onready var introintro = $music/introintromusic
 
-func _ready(): # fires when game starts
+func _init(): # fires when game starts
+	OS.min_window_size = OS.window_size
+	OS.max_window_size = OS.window_size
+
+func _ready(): # fires when game is ready
 	camera.current = true # make the player see through camera2D
 	main()
 
@@ -20,4 +23,6 @@ func main():
 	yield(get_tree().create_timer(1.0), "timeout") # https://godotengine.org/qa/7042/wait-like-function
 	camera.get_node("AnimationPlayer").play("slide to the left")
 	
-	
+func _unhandled_input(event): # fired when someone presses a key
+	if event.is_action_pressed("ui_accept"):
+		pass
